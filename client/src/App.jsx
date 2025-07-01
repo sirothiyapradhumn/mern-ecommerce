@@ -16,10 +16,10 @@ import ShoppingHome from "./pages/shopping-view/ShoppingHome";
 import ShoppingListing from "./pages/shopping-view/ShoppingListing";
 import CheckAuth from "./components/common/CheckAuth";
 import UnAuth from "./pages/unauth/UnAuth";
+import { useSelector } from "react-redux";
 
 function App() {
-  const isAuthenticated = false;
-  const user = null
+  const {user, isAuthenticated} = useSelector(state => state.auth);
 
   return (
     <div className="flex flex-col overflow-hidden bg-white">
