@@ -13,7 +13,7 @@ import { Button } from "../ui/button";
 
 const types = {
   INPUT: "input",
-  AREA: "testarea",
+  AREA: "textarea",
   SELECT: "select",
 };
 
@@ -27,7 +27,7 @@ function CommonForm({
   const renderInputByComponentType = (ctrlItem) => {
     let element = null;
     const value = formData[ctrlItem.name];
-    switch (ctrlItem.conponentType) {
+    switch (ctrlItem.componentType) {
       case types.INPUT:
         element = (
           <Input
