@@ -1,14 +1,11 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const cookiesParser = require("cookie-parser");
-const dotenv = require("dotenv");
+const dotenv = require("dotenv").config();
 const cors = require("cors");
 const authRouter = require("./routes/auth/auth-routes");
 const adminProductRoutes = require("./routes/admin/product-routes");
 
-
-
-dotenv.config();
 
 // Connect to MongoDB
 mongoose

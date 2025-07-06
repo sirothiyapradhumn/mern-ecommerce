@@ -26,10 +26,13 @@ function Products() {
   const [formData, setFormData] = useState(initialFormData);
   const [imageFile, setImageFile] = useState(null);
   const [uploadedImageUrl, setUploadedImageUrl] = useState("");
+  const [imageLoading, setImageLoading] = useState(false);  
 
   const onSubmit = (event) => {
     event.preventDefault();
-    console.log(formData);
+    formData.image = uploadedImageUrl;
+    console.log("Final Form Data:", formData);
+    setOpenAddProduct(false);
   };
 
   return (
@@ -54,6 +57,8 @@ function Products() {
               setImageFile={setImageFile}
               uploadedImageUrl={uploadedImageUrl}
               setUploadedImageUrl={setUploadedImageUrl}
+              imageLoading={imageLoading}
+              setImageLoading={setImageLoading}
             />
             <CommonForm
               formData={formData}
